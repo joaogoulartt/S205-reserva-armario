@@ -1,7 +1,7 @@
 // user object
 const user = {
   id: 1,
-  name: "Raphael",
+  name: "João Goulart",
   registration: "123456",
   pending: false,
   accessibility: true,
@@ -129,8 +129,11 @@ function reserveLocker() {
     "result"
   ).innerText = `Olá, ${user.name}! O armário ${selectedLocker.id} foi reservado com sucesso!`;
 
-  document.getElementById(
-    "details"
-  ).innerText
-   = `Armário: ${selectedLocker.id} \nTipo: ${selectedLocker.type} \nReservado em: ${selectedLocker.reservedAt} \nDevolução: ${selectedLocker.devolution}`;
+  document.getElementById("details").innerText = `Armário: ${
+    selectedLocker.id
+  } \nTipo: ${
+    selectedLocker.type === "double" ? "Duplo" : "Símples"
+  } \nReservado em: ${selectedLocker.reservedAt} \nDevolução: ${
+    selectedLocker.devolution
+  }`;
 }
